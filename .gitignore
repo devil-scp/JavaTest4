@@ -1,0 +1,8 @@
+[wangshibo@gerrit-server hqsb_android]$ cat .gitignore
+# maven ignore
+*/target/
+
+# idea ignore
+.idea/
+*.iml
+out/

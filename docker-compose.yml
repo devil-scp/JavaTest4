@@ -1,0 +1,22 @@
+version: "3"
+services:
+   mysql-4:
+      container_name: mysql-4
+      build: ./docker/mysql
+      image: mysql-4:1.0
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: "root"
+   java-1:
+      container_name: java-1
+      build: ./docker/java
+      image: java-1:1.0
+      depends_on:
+      - mysql-4
+      links:
+      - mysql-4
+      environment:
+       - title=This is a title111
+       - description=This id a description111
+       - languageId=1
